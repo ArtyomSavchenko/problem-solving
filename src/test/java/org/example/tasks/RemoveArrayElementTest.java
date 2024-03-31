@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RemoveArrayElementTest {
-    private static Stream<Arguments> testArraysMerge() {
+    private static Stream<Arguments> testRemoveElement() {
         return Stream.of(
                 Arguments.of(
                         List.of(),
@@ -42,7 +42,7 @@ class RemoveArrayElementTest {
 
     @ParameterizedTest
     @MethodSource
-    void testArraysMerge(List<Integer> list1, Integer toDelete, List<Integer> expected) {
+    void testRemoveElement(List<Integer> list1, Integer toDelete, List<Integer> expected) {
         int[] array1 = list1.stream().mapToInt(i -> i).toArray();
         int[] expectedArray = expected.stream().mapToInt(i -> i).toArray();
 
