@@ -1,4 +1,4 @@
-package org.example;
+package org.example.tasks;
 
 public class UniqueSortedArray {
     public int removeDuplicates(int[] nums) {
