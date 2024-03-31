@@ -7,7 +7,7 @@ public class MergeSortedArrays {
         LinkedList<Integer> remainingNums1 = new LinkedList<>();
         int counter2 = 0;
 
-        for (int i = 0; i < m +n; i++) {
+        for (int i = 0; i < m + n; i++) {
             int n2 = counter2 < n ? nums2[counter2] : Integer.MAX_VALUE;
             int n1 = i < m ? nums1[i] : Integer.MAX_VALUE;
             int n3 = !remainingNums1.isEmpty() ? remainingNums1.getFirst() : Integer.MAX_VALUE;
