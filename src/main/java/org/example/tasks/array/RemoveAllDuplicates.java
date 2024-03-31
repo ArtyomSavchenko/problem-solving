@@ -1,6 +1,6 @@
-package org.example.tasks;
+package org.example.tasks.array;
 
-public class UniqueSortedArray {
+public class RemoveAllDuplicates {
     public int removeDuplicates(int[] nums) {
         int currentIndex = 0;
         int count = 0;

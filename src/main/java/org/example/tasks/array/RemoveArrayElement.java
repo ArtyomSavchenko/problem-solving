@@ -1,4 +1,4 @@
-package org.example.tasks;
+package org.example.tasks.array;
 
 public class RemoveArrayElement {
     public int removeElement(int[] nums, int val) {

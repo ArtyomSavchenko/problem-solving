@@ -1,4 +1,4 @@
-package org.example.tasks;
+package org.example.tasks.array;
 
 import java.util.LinkedList;
 
