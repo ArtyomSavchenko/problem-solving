@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BestTimeToBuyAndSellSingleTest {
+class BestTimeToBuyAndSell2Test {
     private static Stream<Arguments> testProfit() {
         return Stream.of(
                 Arguments.of(
@@ -29,12 +29,16 @@ class BestTimeToBuyAndSellSingleTest {
                         0
                 ),
                 Arguments.of(
-                        List.of(1, 100, 1, 1, 1, 0),
-                        99
+                        List.of(1, 100, 1, 2, 1, 6),
+                        105
                 ),
                 Arguments.of(
-                        List.of(1, 1, 1, 1, 1, 1),
-                        0
+                        List.of(1, 2, 1, 3, 1, 0),
+                        3
+                ),
+                Arguments.of(
+                        List.of(0, 1, 2, 3, 4, 5),
+                        5
                 )
         );
     }
@@ -44,7 +48,7 @@ class BestTimeToBuyAndSellSingleTest {
     void testProfit(List<Integer> list1, Integer expectedElement) {
         int[] array1 = list1.stream().mapToInt(i -> i).toArray();
 
-        BestTimeToBuyAndSellSingle bestTimeToBuyAndSell = new BestTimeToBuyAndSellSingle();
+        BestTimeToBuyAndSell2 bestTimeToBuyAndSell = new BestTimeToBuyAndSell2();
         int profit = bestTimeToBuyAndSell.maxProfit(array1);
         assertEquals(expectedElement, profit);
     }
