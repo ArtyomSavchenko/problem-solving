@@ -1,22 +1,24 @@
 package org.example.tasks.array;
 
+import java.util.Arrays;
+
 public class JumpGame2 {
-    public boolean canJump(int[] nums) {
-        boolean[] memo = new boolean[nums.length];
-        memo[0] = true;
+    public int jump(int[] nums) {
+        int[] memo = new int[nums.length];
+        Arrays.fill(memo, Integer.MAX_VALUE);
+        memo[0] = 0;
         if (nums.length == 1) {
-            return true;
+            return 0;
         }
         for (int i = 0; i < nums.length; i++) {
-            if (memo[i]) {
-                for (int j = i + 1; j <= i + nums[i]; j++) {
-                    if (j >= nums.length - 1) {
-                        return true;
-                    }
-                    memo[j] = true;
+            int cj = memo[i];
+            int end = Math.min(i + nums[i] + 1, nums.length);
+            for (int j = i; j < end; j++) {
+                if (memo[j] > cj + 1) {
+                    memo[j] = cj + 1;
                 }
             }
         }
-        return false;
+        return memo[nums.length - 1];
     }
 }
